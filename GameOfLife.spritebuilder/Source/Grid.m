@@ -97,7 +97,7 @@ static const int GRID_COLUMNS = 10;
     //NSArray has count method that returns how many elements in array
     for (int i = 0; i < [_gridArray count]; i++) {
         //iterate through all the columns for a given row
-        for (int j = 0; j < [_gridArray[i] count]); j++) {
+        for (int j = 0; j < [_gridArray[i] count]; j++) {
             //access the creature in the cell
             Creature *currentCreature = _gridArray[i][j];
             
