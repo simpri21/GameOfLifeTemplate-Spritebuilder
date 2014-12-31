@@ -73,6 +73,9 @@ static const int GRID_COLUMNS = 10;
         
     //invert its state
     creature.isAlive = !creature.isAlive;
+    
+    //update count of visible bubbles
+    _numVisible += creature.isAlive;
 }
 
 -(Creature *)creatureForTouchPosition:(CGPoint)touchPosition {
