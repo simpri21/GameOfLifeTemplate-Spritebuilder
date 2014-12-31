@@ -40,12 +40,12 @@ static const int GRID_COLUMNS = 10;
     _gridArray = [NSMutableArray array];
     
     //initialize creatures
-    for (int i = 10; i < GRID_ROWS; i++) {
+    for (int i = 3; i < GRID_ROWS; i++) {
         //this is how you create two dimensional arrays, put arrays into arrays
         _gridArray[i] = [NSMutableArray array];
         x = 0;
         
-        for (int j = 10; j < GRID_COLUMNS; j++) {
+        for (int j = 3; j < GRID_COLUMNS; j++) {
             Creature *creature = [[Creature alloc] initCreature];
             creature.anchorPoint = ccp(0,0);
             creature.position = ccp(x,y);
