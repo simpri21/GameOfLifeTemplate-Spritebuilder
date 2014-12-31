@@ -14,6 +14,8 @@
 
 @property (nonatomic, assign) int generation;
 
+@property (nonatomic, assign) int numVisible;
+
 -(void)evolveStep;
 -(void)countNeighbors;
 -(void)updateCreatures;

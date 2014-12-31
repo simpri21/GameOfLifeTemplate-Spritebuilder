@@ -149,6 +149,7 @@ static const int GRID_COLUMNS = 10;
             else if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
                 creature.isAlive = FALSE;
             }
+            _numVisible += creature.isAlive;
         }
     }
 }

@@ -36,9 +36,10 @@
 
 //this method will get called every half second when play is hit and stop when pause is hit
 -(void)step {
-    [_grid evolveStep];
-    _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
-    _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
-    
+    if (!_numVisible) {
+        [_grid evolveStep];
+        _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
+        _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
+    }
 }
 @end
