@@ -15,6 +15,7 @@ static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
 
 @implementation Grid {
+    CCLabelTTF *_numVisibleLabel;
     NSMutableArray *_gridArray;
     float _cellWidth;
     float _cellHeight;
@@ -81,6 +82,8 @@ static const int GRID_COLUMNS = 10;
     else {
         _numVisible -= 1;
     }
+    _numVisibleLabel.string = [NSString stringWithFormat:@"%d", _numVisible];
+
     
 }
 

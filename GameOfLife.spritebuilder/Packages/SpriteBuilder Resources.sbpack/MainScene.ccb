@@ -963,6 +963,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>
@@ -1937,7 +1939,7 @@
 								<key>displayName</key>
 								<string>CCLabelTTF</string>
 								<key>memberVarAssignmentName</key>
-								<string>_numVisible</string>
+								<string>_numVisibleLabel</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
