@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
+#import "UITouch+CC.h"
 #import "Grid.h"
 #import "Creature.h"
 
@@ -65,7 +66,7 @@ static const int GRID_COLUMNS = 10;
     
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     //get the x,y coordinates of the touch
-    CGPoint touchLocation = [touch locationInNode:self];
+    CGPoint touchLocation = [touch locationInView:self.view];
         
     //get the creature at that location
     Creature *creature = [self creatureForTouchPosition:touchLocation];
