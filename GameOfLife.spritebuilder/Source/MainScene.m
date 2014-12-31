@@ -14,7 +14,7 @@
     CCTimer *_timer;
     CCLabelTTF *_generationLabel;
     CCLabelTTF *_populationLabel;
-    CCLabelTTF *_numVisible;`
+    CCLabelTTF *_numVisibleLabel;
 }
 
 -(id)init {
@@ -28,9 +28,7 @@
 
 -(void)play {
     //this tells the game to call a method called step every half second
-    if (!_numVisible) {
     [self schedule:@selector(step) interval:0.5f];
-    }
 }
 
 -(void)pause {
@@ -39,8 +37,11 @@
 
 //this method will get called every half second when play is hit and stop when pause is hit
 -(void)step {
+    if (!_grid.numVisible) {
         [_grid evolveStep];
         _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
         _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
+        _numVisibleLabel.string = [NSString stringWithFormat:@"%d", _grid.numVisible];
+    }
 }
 @end
