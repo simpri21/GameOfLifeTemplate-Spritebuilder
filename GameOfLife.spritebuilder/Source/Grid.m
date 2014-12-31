@@ -37,7 +37,7 @@ static const int GRID_COLUMNS = 10;
     float y = 0;
     
     // initialize the array as a blank NSMutable Array
-    _gridArray = [NSMutable array];
+    _gridArray = [NSMutableArray array];
     
     //initialize creatures
     for (int i = 0; i < GRID_ROWS; i++) {
