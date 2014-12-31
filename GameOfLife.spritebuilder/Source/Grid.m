@@ -77,14 +77,12 @@ static const int GRID_COLUMNS = 10;
     
     //update count of visible bubbles
     if (creature.isAlive) {
-        _numVisible += 1;
+        _totalAlive += 1;
     }
     else {
-        _numVisible -= 1;
+        _totalAlive -= 1;
     }
     _numVisibleLabel.string = [NSString stringWithFormat:@"%d", _numVisible];
-
-    
 }
 
 -(Creature *)creatureForTouchPosition:(CGPoint)touchPosition {
@@ -150,6 +148,7 @@ static const int GRID_COLUMNS = 10;
     return isIndexValid;
 }
 -(void)updateCreatures {
+    int numAlive = 0;
     //go through all rows
     for (int i = 0; i < GRID_ROWS; i++) {
         //go through all columns
@@ -161,8 +160,11 @@ static const int GRID_COLUMNS = 10;
             else if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
                 creature.isAlive = FALSE;
             }
-            _numVisible += creature.isAlive;
+            if (creature.isAlive) {
+                numAlive += 1;
+            }
         }
     }
+    _totalAlive = numAlive;
 }
 @end
