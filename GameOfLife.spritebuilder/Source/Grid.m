@@ -82,7 +82,7 @@ static const int GRID_COLUMNS = 10;
     else {
         _totalAlive -= 1;
     }
-    _numVisibleLabel.string = [NSString stringWithFormat:@"%d", _numVisible];
+    _numVisibleLabel.string = [NSString stringWithFormat:@"%d", _totalAlive];
 }
 
 -(Creature *)creatureForTouchPosition:(CGPoint)touchPosition {
