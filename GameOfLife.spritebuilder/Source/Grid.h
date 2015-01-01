@@ -14,7 +14,8 @@
 
 @property (nonatomic, assign) int generation;
 
-@property (nonatomic, assign) int numVisible;
+@property (nonatomic, assign) BOOL isStatic;
+
 
 -(void)evolveStep;
 -(void)countNeighbors;

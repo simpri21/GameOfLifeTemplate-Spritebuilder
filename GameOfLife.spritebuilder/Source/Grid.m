@@ -16,6 +16,7 @@ static const int GRID_COLUMNS = 10;
 
 @implementation Grid {
     NSMutableArray *_gridArray;
+    NSMutableArray *_gridArrayCopy;
     CCLabelTTF *_populationLabel;
     float _cellWidth;
     float _cellHeight;
@@ -28,6 +29,9 @@ static const int GRID_COLUMNS = 10;
     
     //accepts touches on the grid
     self.userInteractionEnabled = YES;
+    
+    //sets initial value of grid movement
+    _isStatic = FALSE;
 }
 
 -(void)setupGrid {
@@ -150,6 +154,7 @@ static const int GRID_COLUMNS = 10;
 -(void)updateCreatures {
     int numAlive = 0;
     //go through all rows
+    _gridArrayCopy = _gridArray;
     for (int i = 0; i < GRID_ROWS; i++) {
         //go through all columns
         for (int j = 0; j < GRID_COLUMNS; j++) {
@@ -164,6 +169,9 @@ static const int GRID_COLUMNS = 10;
                 numAlive += 1;
             }
         }
+    }
+    if (_gridArrayCopy == _gridArray) {
+        _isStatic = TRUE;
     }
     _totalAlive = numAlive;
 }
