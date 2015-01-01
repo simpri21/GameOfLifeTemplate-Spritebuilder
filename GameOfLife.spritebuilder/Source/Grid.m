@@ -176,7 +176,7 @@ static const int GRID_COLUMNS = 10;
     }
     _totalAlive = numAlive;
     if (numStatic == (GRID_COLUMNS * GRID_ROWS)) {
-        _isStatic = TRUE;
+        _isStatic = FALSE;
     }
 }
 @end
