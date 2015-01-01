@@ -16,9 +16,9 @@ static const int GRID_COLUMNS = 10;
 
 @implementation Grid {
     NSMutableArray *_gridArray;
+    CCLabelTTF *_populationLabel;
     float _cellWidth;
     float _cellHeight;
-    CCLabelTTF *_populationLabel;
 }
 
 -(void)onEnter {

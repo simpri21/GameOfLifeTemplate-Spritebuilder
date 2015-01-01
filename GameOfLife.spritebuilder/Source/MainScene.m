@@ -14,7 +14,6 @@
     CCTimer *_timer;
     CCLabelTTF *_generationLabel;
     CCLabelTTF *_populationLabel;
-    CCLabelTTF *_numVisibleLabel;
 }
 
 -(id)init {
