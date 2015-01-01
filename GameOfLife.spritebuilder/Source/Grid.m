@@ -155,11 +155,12 @@ static const int GRID_COLUMNS = 10;
     int numAlive = 0;
     int numStatic = 0;
     //go through all rows
+    _gridArrayCopy = _gridArray;
     for (int i = 0; i < GRID_ROWS; i++) {
         //go through all columns
         for (int j = 0; j < GRID_COLUMNS; j++) {
             Creature *creature = _gridArray[i][j];
-            Creature *creatureCopy = _gridArray[i][j];
+            Creature *creatureCopy = _gridArrayCopy[i][j];
             if (creature.livingNeighbors == 3) {
                 creature.isAlive = TRUE;
             }
@@ -176,7 +177,7 @@ static const int GRID_COLUMNS = 10;
     }
     _totalAlive = numAlive;
     if (numStatic == (GRID_COLUMNS * GRID_ROWS)) {
-        _isStatic = FALSE;
+        _isStatic = TRUE;
     }
 }
 @end
