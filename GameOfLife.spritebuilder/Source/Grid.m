@@ -30,7 +30,7 @@ static const int GRID_COLUMNS = 10;
     //accepts touches on the grid
     self.userInteractionEnabled = YES;
     
-    //sets initial value of grid movement
+    //sets initial state of grid movement
     _isStatic = FALSE;
 }
 
@@ -153,26 +153,30 @@ static const int GRID_COLUMNS = 10;
 }
 -(void)updateCreatures {
     int numAlive = 0;
+    int numStatic = 0;
     //go through all rows
-    _gridArrayCopy = _gridArray;
     for (int i = 0; i < GRID_ROWS; i++) {
         //go through all columns
         for (int j = 0; j < GRID_COLUMNS; j++) {
             Creature *creature = _gridArray[i][j];
+            Creature *creatureCopy = _gridArray[i][j];
             if (creature.livingNeighbors == 3) {
                 creature.isAlive = TRUE;
             }
             else if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
                 creature.isAlive = FALSE;
             }
+            if (creature.isAlive == creatureCopy.isAlive) {
+                numStatic += 1;
+            }
             if (creature.isAlive) {
                 numAlive += 1;
             }
         }
     }
-    if (_gridArrayCopy == _gridArray) {
+    _totalAlive = numAlive;
+    if (numStatic == (GRID_COLUMNS * GRID_ROWS)) {
         _isStatic = TRUE;
     }
-    _totalAlive = numAlive;
 }
 @end
