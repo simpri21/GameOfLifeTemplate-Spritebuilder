@@ -17,8 +17,6 @@ static const int GRID_COLUMNS = 10;
 @implementation Grid {
     NSMutableArray *_gridArray;
     NSMutableArray *_gridArrayCopy;
-    CCLabelTTF *_populationLabel;
-    CCLabelTTF *_numVisibleLabel;
     float _cellWidth;
     float _cellHeight;
 }
@@ -87,7 +85,6 @@ static const int GRID_COLUMNS = 10;
     else {
         _totalAlive -= 1;
     }
-    _populationLabel.string = [NSString stringWithFormat:@"%d", _totalAlive];
 }
 
 -(Creature *)creatureForTouchPosition:(CGPoint)touchPosition {
@@ -177,9 +174,9 @@ static const int GRID_COLUMNS = 10;
         }
     }
     _totalAlive = numAlive;
-    _numVisibleLabel.string = [NSString stringWithFormat:@"%d", numStatic];
+    _number = numStatic;
     if (numStatic == (GRID_COLUMNS * GRID_ROWS)) {
-        _isStatic = TRUE;
+        _isStatic = FALSE;
     }
 }
 @end

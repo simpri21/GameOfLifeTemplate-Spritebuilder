@@ -14,6 +14,7 @@
     CCTimer *_timer;
     CCLabelTTF *_generationLabel;
     CCLabelTTF *_populationLabel;
+    CCLabelTTF *_numVisibleLabel;
 }
 
 -(id)init {
@@ -40,6 +41,7 @@
         [_grid evolveStep];
         _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
         _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
+        _numVisibleLabel.string = [NSString stringWithFormat:@"%d", _grid.number];
     }
     else {
         [self pause];

@@ -16,6 +16,8 @@
 
 @property (nonatomic, assign) BOOL isStatic;
 
+@property (nonatomic, assign) int number;
+
 
 -(void)evolveStep;
 -(void)countNeighbors;
