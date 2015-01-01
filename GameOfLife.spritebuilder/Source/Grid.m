@@ -18,6 +18,7 @@ static const int GRID_COLUMNS = 10;
     NSMutableArray *_gridArray;
     NSMutableArray *_gridArrayCopy;
     CCLabelTTF *_populationLabel;
+    CCLabelTTF *_numVisibleLabel;
     float _cellWidth;
     float _cellHeight;
 }
@@ -176,6 +177,7 @@ static const int GRID_COLUMNS = 10;
         }
     }
     _totalAlive = numAlive;
+    _numVisibleLabel.string = [NSString stringWithFormat:@"%d", numStatic];
     if (numStatic == (GRID_COLUMNS * GRID_ROWS)) {
         _isStatic = TRUE;
     }
